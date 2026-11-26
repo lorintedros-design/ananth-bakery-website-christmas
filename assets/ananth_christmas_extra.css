@@ -1,0 +1,341 @@
+/* =========================================
+   ANANTH BAKERY - EXTRA CHRISTMAS DECORATIONS
+   Add this file to your website and link it
+   from index.html. See README.txt for setup.
+   ========================================= */
+
+/* 1. Elegant gold decorative separators */
+.christmas-heading .section-title::after {
+  content: "";
+  display: block;
+  width: 110px;
+  height: 2px;
+  margin: 16px auto 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #bd793b,
+    #e8c77f,
+    #bd793b,
+    transparent
+  );
+}
+
+/* 2. Evergreen corner decorations */
+.christmas-special {
+  position: relative;
+  overflow: hidden;
+}
+
+.christmas-special::before,
+.christmas-special::after {
+  position: absolute;
+  z-index: 0;
+  font-size: 52px;
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+.christmas-special::before {
+  content: "🌿";
+  top: 15px;
+  left: 15px;
+  transform: rotate(-35deg);
+}
+
+.christmas-special::after {
+  content: "🌿";
+  bottom: 15px;
+  right: 15px;
+  transform: rotate(145deg);
+}
+
+/* Keep seasonal content above decorative corners */
+.christmas-special > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* 3. Refined Christmas gift accents */
+.xmas-gifts {
+  position: relative;
+  gap: 12px;
+}
+
+.xmas-gifts::before,
+.xmas-gifts::after {
+  content: "✧";
+  color: #bd793b;
+  font-size: 22px;
+  text-shadow: 0 0 8px #e8c77f;
+}
+
+.xmas-gifts .gift {
+  box-shadow: 0 4px 12px #4b28182b;
+  transition: transform 0.3s ease;
+}
+
+.xmas-gifts .gift:hover {
+  transform: translateY(-5px) rotate(-3deg);
+}
+
+/* 4. Soft festive glow and cake-card hover effect */
+.christmas-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.christmas-card:hover {
+  transform: translateY(-4px);
+  border-color: #bd793b;
+  box-shadow:
+    0 10px 28px #bd793b25,
+    0 0 12px #e8c77f30;
+}
+
+.christmas-mark {
+  animation: festive-glow 3s ease-in-out infinite;
+}
+
+@keyframes festive-glow {
+  0%, 100% {
+    box-shadow: 0 0 3px #bd793b22;
+  }
+  50% {
+    box-shadow: 0 0 13px #e8c77f88;
+  }
+}
+
+/* 5. Christmas-themed section divider */
+.christmas-note::before {
+  content: "✦  ✧  ✦";
+  display: block;
+  color: #bd793b;
+  font-size: 19px;
+  letter-spacing: 9px;
+  margin-bottom: 8px;
+}
+
+.christmas-note::after {
+  content: "";
+  display: block;
+  width: 145px;
+  margin: 12px auto 0;
+  border-bottom: 1px solid #bd793b;
+  opacity: 0.65;
+}
+
+/* Mobile-friendly decoration sizing */
+@media (max-width: 680px) {
+  .christmas-special::before,
+  .christmas-special::after {
+    font-size: 32px;
+    opacity: 0.16;
+  }
+
+  .christmas-heading .section-title::after {
+    width: 75px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .christmas-card,
+  .xmas-gifts .gift {
+    transition: none !important;
+  }
+
+  .christmas-mark {
+    animation: none !important;
+  }
+}
+
+
+/* 6. Premium festive finish — subtle ornaments across the bakery site */
+:root {
+  --xmas-pine: #38563d;
+  --xmas-red: #963f35;
+  --xmas-champagne: #e8cf9b;
+}
+.topline {
+  background: linear-gradient(100deg, #2d1a12, #3f2b1b 48%, #2d1a12);
+  border-bottom: 1px solid #bd914f;
+  position: relative;
+}
+.topline::before,
+.topline::after {
+  content: "✦";
+  color: #d8b56d;
+  font-size: 10px;
+  margin: 0 12px;
+}
+.nav {
+  box-shadow: 0 5px 22px rgba(55, 34, 19, .045);
+}
+.nav .brandname small::before {
+  content: "❄ ";
+  color: var(--xmas-pine);
+}
+.hero {
+  isolation: isolate;
+}
+.hero::after {
+  content: "✧";
+  position: absolute;
+  z-index: 0;
+  right: 4.5%;
+  bottom: 24px;
+  color: #bd793b;
+  font-size: clamp(42px, 7vw, 82px);
+  opacity: .22;
+  pointer-events: none;
+}
+.hero-grid {
+  z-index: 1;
+}
+.trust {
+  border-top: 1px solid rgba(215, 181, 117, .35);
+  border-bottom: 1px solid rgba(215, 181, 117, .35);
+}
+.trust-icon {
+  text-shadow: 0 0 12px rgba(216, 156, 89, .2);
+}
+.story-image img,
+.product-image img {
+  outline: 1px solid rgba(189, 121, 59, .18);
+  outline-offset: -7px;
+}
+.products {
+  position: relative;
+}
+.products::before,
+.visit::before {
+  content: "✦  ❄  ✦";
+  display: block;
+  width: max-content;
+  margin: 0 auto 24px;
+  color: #a78a55;
+  font-size: 13px;
+  letter-spacing: 8px;
+  opacity: .7;
+}
+.product {
+  border: 1px solid rgba(189, 121, 59, .17);
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 34px rgba(69, 39, 20, .12);
+}
+.product-badge {
+  border: 1px solid #d8bd88;
+  border-radius: 2px;
+}
+.christmas-special {
+  background:
+    radial-gradient(circle at 8% 18%, rgba(255,255,255,.62), transparent 22%),
+    radial-gradient(circle at 92% 82%, rgba(255,255,255,.48), transparent 24%),
+    linear-gradient(135deg, #f8f0e2 0%, #efe0c9 52%, #f8f0e2 100%);
+}
+.christmas-heading .eyebrow {
+  color: var(--xmas-pine);
+}
+.christmas-heading .section-title {
+  text-shadow: 0 2px 0 rgba(255,255,255,.45);
+}
+.christmas-card {
+  border-radius: 4px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.7), transparent 60%),
+    #fffaf3;
+}
+.christmas-card::after {
+  content: "❄";
+  position: absolute;
+  right: 13px;
+  top: 8px;
+  color: #6e8768;
+  opacity: .35;
+  font-size: 17px;
+  pointer-events: none;
+}
+.christmas-mark {
+  background: linear-gradient(145deg, #fffdf8, #f1e4ce);
+  color: var(--xmas-red);
+  box-shadow: inset 0 0 0 3px rgba(255,255,255,.7);
+}
+.christmas-card .btn {
+  background: linear-gradient(110deg, #3d5b40, #29452f);
+  border: 1px solid #b7a06e;
+}
+.christmas-card .btn:hover {
+  background: linear-gradient(110deg, #8d4437, #713329);
+}
+.signature {
+  border-top: 1px solid rgba(216, 181, 109, .35);
+  border-bottom: 1px solid rgba(216, 181, 109, .35);
+}
+.signature-art {
+  box-shadow: inset 0 0 0 7px rgba(255,255,255,.025), 0 12px 35px rgba(0,0,0,.12);
+}
+.order-form,
+.visit-card {
+  box-shadow: 0 10px 30px rgba(70, 42, 22, .055);
+}
+footer {
+  border-top: 2px solid #98713f;
+  position: relative;
+}
+footer::before {
+  content: "✦  ❄  ✦  ❄  ✦";
+  display: block;
+  text-align: center;
+  color: #bd9b62;
+  font-size: 11px;
+  letter-spacing: 9px;
+  margin: 0 auto 17px;
+  opacity: .7;
+}
+@media (max-width: 680px) {
+  .topline::before,
+  .topline::after { margin: 0 4px; font-size: 8px; }
+  .hero::after { right: 12px; bottom: 8px; font-size: 38px; }
+  .products::before,
+  .visit::before { margin-bottom: 15px; }
+  .christmas-card::after { right: 8px; top: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .product { transition: none !important; }
+}
+
+/* Keep signature ornaments behind the Heritage Star Cake copy on phones. */
+@media (max-width: 680px) {
+  .signature {
+    isolation: isolate;
+  }
+
+  .signature::before,
+  .signature::after {
+    content: "";
+    z-index: 0;
+    pointer-events: none;
+    width: min(72vw, 290px);
+    height: auto;
+    aspect-ratio: 1;
+    color: transparent;
+    font-size: 0;
+    background: rgba(145, 101, 60, .12);
+    clip-path: polygon(
+      50% 0%, 60% 38%, 85% 15%, 72% 43%, 100% 50%, 72% 57%,
+      85% 85%, 60% 62%, 50% 100%, 40% 62%, 15% 85%, 28% 57%,
+      0% 50%, 28% 43%, 15% 15%, 40% 38%
+    );
+  }
+
+  .signature-inner {
+    position: relative;
+    z-index: 1;
+  }
+}
